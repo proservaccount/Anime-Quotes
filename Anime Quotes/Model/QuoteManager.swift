@@ -76,7 +76,7 @@ struct QuoteManager
             let allTheData = QuoteModel(quote: singleQuote, character: character, anime: anime)
             
             print(allTheData)
-            print("No way jose")
+            
             
             return allTheData
         }

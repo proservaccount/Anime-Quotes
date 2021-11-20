@@ -11,9 +11,7 @@ class ViewController: UIViewController, QuoteManagerDelegate
 {
 
     
-
     @IBOutlet weak var animeTitle: UILabel!
-    
     @IBOutlet weak var animeCharacter: UILabel!
     @IBOutlet weak var quoteLabel: UILabel!
     

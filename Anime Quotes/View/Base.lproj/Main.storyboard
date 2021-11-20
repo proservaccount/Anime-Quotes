@@ -16,45 +16,69 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="171" translatesAutoresizingMaskIntoConstraints="NO" id="V4g-1H-u8h">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="V4g-1H-u8h">
                                 <rect key="frame" x="0.0" y="44" width="428" height="848"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Random Anime Quotes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MDg-Ds-mTD">
-                                        <rect key="frame" x="76.666666666666657" y="0.0" width="274.66666666666674" height="32.666666666666664"/>
+                                        <rect key="frame" x="76.666666666666657" y="0.0" width="274.66666666666674" height="149.66666666666666"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                                         <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="30"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Anime Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t1V-ca-gQb">
-                                        <rect key="frame" x="165.33333333333334" y="203.66666666666666" width="97.333333333333343" height="20.333333333333343"/>
+                                        <rect key="frame" x="165.33333333333334" y="174.66666666666669" width="97.333333333333343" height="149.66666666666669"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Anime Character" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cee-3G-734">
-                                        <rect key="frame" x="150" y="395" width="128" height="20.333333333333314"/>
+                                        <rect key="frame" x="150" y="349.33333333333331" width="128" height="149.33333333333331"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Anime Quote" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bvi-gN-E6V">
-                                        <rect key="frame" x="164.66666666666666" y="586.33333333333337" width="98.999999999999972" height="20.333333333333371"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="noh-lS-U6d">
+                                        <rect key="frame" x="144.66666666666666" y="523.66666666666663" width="138.99999999999997" height="149.66666666666663"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Anime Quote" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bvi-gN-E6V">
+                                                <rect key="frame" x="20" y="20.000000000000007" width="99" height="109.66666666666669"/>
+                                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9o5-wJ-z3P">
-                                        <rect key="frame" x="177" y="777.66666666666663" width="74" height="70.333333333333371"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="tinted" title="Change"/>
-                                        <connections>
-                                            <action selector="changedQuotePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JZq-lQ-MJO"/>
-                                        </connections>
-                                    </button>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="bvi-gN-E6V" secondAttribute="trailing" constant="20" id="cd7-xD-FVn"/>
+                                            <constraint firstItem="bvi-gN-E6V" firstAttribute="top" secondItem="noh-lS-U6d" secondAttribute="top" constant="20" id="ljg-ES-tCE"/>
+                                            <constraint firstItem="bvi-gN-E6V" firstAttribute="leading" secondItem="noh-lS-U6d" secondAttribute="leading" constant="20" id="ney-hl-lSc"/>
+                                            <constraint firstAttribute="bottom" secondItem="bvi-gN-E6V" secondAttribute="bottom" constant="20" id="wcu-6L-DYe"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jgk-qA-cGn">
+                                        <rect key="frame" x="157" y="698.33333333333337" width="114" height="149.66666666666663"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9o5-wJ-z3P">
+                                                <rect key="frame" x="20" y="40.000000000000007" width="74" height="69.666666666666686"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="tinted" title="Change"/>
+                                                <connections>
+                                                    <action selector="changedQuotePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JZq-lQ-MJO"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="9o5-wJ-z3P" secondAttribute="trailing" constant="20" id="Ibs-Ry-b6R"/>
+                                            <constraint firstItem="9o5-wJ-z3P" firstAttribute="leading" secondItem="jgk-qA-cGn" secondAttribute="leading" constant="20" id="JMd-1z-9mQ"/>
+                                            <constraint firstAttribute="bottom" secondItem="9o5-wJ-z3P" secondAttribute="bottom" constant="40" id="UfA-0F-Eis"/>
+                                            <constraint firstItem="9o5-wJ-z3P" firstAttribute="top" secondItem="jgk-qA-cGn" secondAttribute="top" constant="40" id="crp-FE-18f"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                             </stackView>
                         </subviews>
