@@ -17,9 +17,7 @@ struct QuoteManager
 {
     
     var delegate: QuoteManagerDelegate?
-    
-    
-    
+
     
     func performRequest()
     {
@@ -82,7 +80,7 @@ struct QuoteManager
         }
         catch
         {
-            print("Big Error")
+            print("Error getting data \(error)")
             return nil
         }
     }
