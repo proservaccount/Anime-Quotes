@@ -34,7 +34,7 @@ class ViewController: UIViewController, QuoteManagerDelegate
         
         
         quoteManager.delegate = self
-        quoteManager.performRequest()
+//        quoteManager.performRequest()
         
         
     }

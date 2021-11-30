@@ -35,7 +35,9 @@ struct QuoteManager
             let task =  session.dataTask(with: url) { data, response, error in
                 if error != nil
                 {
-                    print("Error!!!!")
+                    
+
+                    print("Error starting task!!!! \(error)")
                     return
                 }
                 
