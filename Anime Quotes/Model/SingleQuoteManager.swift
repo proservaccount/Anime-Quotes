@@ -13,19 +13,19 @@ protocol QuoteManagerDelegate
     func didUpdateQuote(quoteGoesHere: String, characterGoesHere: String, animeGoesHere: String)
 }
 
-struct QuoteManager
+struct SingleQuoteManager
 {
     
     var delegate: QuoteManagerDelegate?
 
     
-    func performRequest()
+    func performRequest(chosenMethod: String)
     {
-        let animeQuoteURL = "https://animechan.vercel.app/api/random"
+        
         
         
         //1. Create a URL
-        if let url = URL(string: animeQuoteURL)
+        if let url = URL(string: chosenMethod)
         {
             //2. Create a URLSession
             let session = URLSession(configuration: .default)
@@ -45,11 +45,8 @@ struct QuoteManager
                 {
                     if let anime = self.parseJSON(safeData)
                     {
-                        
                         delegate?.didUpdateQuote(quoteGoesHere: anime.quote, characterGoesHere: anime.character, animeGoesHere: anime.anime)
-
                     }
-                    
                 }
                 
             }
@@ -62,18 +59,18 @@ struct QuoteManager
 
     
     
-    func parseJSON(_ animeData: Data) -> QuoteModel?
+    func parseJSON(_ animeData: Data) -> SingleQuoteModel?
     {
         let decoder = JSONDecoder()
         
         do
         {
-            let decodedData = try decoder.decode(QuoteData.self, from: animeData)
+            let decodedData = try decoder.decode(SingleQuoteData.self, from: animeData)
             
             let singleQuote = decodedData.quote
             let character = decodedData.character
             let anime = decodedData.anime
-            let allTheData = QuoteModel(quote: singleQuote, character: character, anime: anime)
+            let allTheData = SingleQuoteModel(quote: singleQuote, character: character, anime: anime)
             
             print(allTheData)
             

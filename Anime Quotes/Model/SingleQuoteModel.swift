@@ -8,7 +8,7 @@
 import Foundation
 
 
-struct QuoteModel
+struct SingleQuoteModel
 {
     let quote: String
     let character: String

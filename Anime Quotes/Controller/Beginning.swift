@@ -19,13 +19,19 @@ class Beginning: UIViewController
     
 
     
-    
-    @IBAction func buttonPressed(_ sender: UIButton)
+    @IBAction func singleQuotePressed(_ sender: UIButton)
     {
         print("Button Pressed")
-        performSegue(withIdentifier: "theButton", sender: self)
+        performSegue(withIdentifier: "getSingleQuote", sender: self)
+
     }
     
+    
+    @IBAction func quoteByAnimePressed(_ sender: UIButton)
+    {
+        print("By anime pressed")
+        performSegue(withIdentifier: "getQuoteByTitle", sender: self)
+    }
     
     
     

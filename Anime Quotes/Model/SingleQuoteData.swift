@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct QuoteData: Codable
+struct SingleQuoteData: Codable
 {
     let anime: String
     let character: String

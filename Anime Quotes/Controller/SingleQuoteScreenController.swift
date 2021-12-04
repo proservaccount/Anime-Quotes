@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, QuoteManagerDelegate
+class SingleQuoteScreenController: UIViewController, QuoteManagerDelegate
 {
  
     @IBOutlet weak var changeButton: UIButton!
@@ -15,9 +15,8 @@ class ViewController: UIViewController, QuoteManagerDelegate
     @IBOutlet weak var animeCharacter: UILabel!
     @IBOutlet weak var newQuoteText: UITextView!
     
-    var quoteManager = QuoteManager()
-    
-    
+    var quoteManager = SingleQuoteManager()
+    let singleQuoteURL = "https://animechan.vercel.app/api/random"
     
     override func viewDidLoad()
     {
@@ -34,7 +33,7 @@ class ViewController: UIViewController, QuoteManagerDelegate
         
         
         quoteManager.delegate = self
-//        quoteManager.performRequest()
+        quoteManager.performRequest(chosenMethod: singleQuoteURL)
         
         
     }
@@ -56,8 +55,7 @@ class ViewController: UIViewController, QuoteManagerDelegate
     //Each time button is pressed
     @IBAction func changedQuotePressed(_ sender: UIButton)
     {
-        quoteManager.performRequest()
-
+        quoteManager.performRequest(chosenMethod: singleQuoteURL)
     }
     
         
