@@ -39,9 +39,18 @@ class ByAnimeQuoteScreenController: UIViewController, ByAnimeQuoteManagerDelegat
         // Do any additional setup after loading the view.
         super.viewDidLoad()
         
+        
+        let gradientLayer: CAGradientLayer = CAGradientLayer()
+        
+        gradientLayer.frame = self.view.bounds
+        gradientLayer.colors = [UIColor.green.cgColor, UIColor.black.cgColor]
+        self.view.layer.insertSublayer(gradientLayer, at: 0)
+        
         byAnime.delegate = self
         changeAnime.dataSource = self
         changeAnime.delegate = self
+        byAnime.performRequest(chosenMethod: quoteByAnimeTitle)
+
 
     }
     
@@ -93,9 +102,11 @@ class ByAnimeQuoteScreenController: UIViewController, ByAnimeQuoteManagerDelegat
 
 extension ByAnimeQuoteScreenController: UIPickerViewDelegate
 {
-//    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-//
-//    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?
+    {
+        return "Hi"
+
+    }
 }
 
 
@@ -106,6 +117,7 @@ extension ByAnimeQuoteScreenController: UIPickerViewDataSource
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        
         return 10
     }
     

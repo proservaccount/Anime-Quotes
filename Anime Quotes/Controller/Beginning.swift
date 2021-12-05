@@ -36,6 +36,14 @@ class Beginning: UIViewController
     
     
     
+    @IBAction func toAvailableAnime(_ sender: UIButton)
+    {
+        performSegue(withIdentifier: "toAllAnime", sender: self)
+    }
+    
+    
+    
+    
     /*
     // MARK: - Navigation
 

@@ -38,7 +38,7 @@ struct ByAnimeManager
                 {
                     
                     
-                    print("Error starting task!!!! \(error)")
+                    print("Error starting task!!!!")
                     return
                 }
                 
