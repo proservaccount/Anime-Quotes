@@ -9,9 +9,16 @@ import UIKit
 
 class ByAnimeQuoteScreenController: UIViewController, ByAnimeQuoteManagerDelegate
 {
-    func updatePickerView(numOfSlots: Int) {
+    
+    
+    var only10 = AllAnimeManager()
+    
+    
+    func updatePickerView(numOfSlots: Int)
+    {
         nums = numOfSlots
     }
+    
     
     
     var nums: Int = 0
@@ -27,12 +34,10 @@ class ByAnimeQuoteScreenController: UIViewController, ByAnimeQuoteManagerDelegat
 
     var typedAnime: String?
     var quoteManager = ByAnimeManager()
-    let quoteByAnimeTitle = "https://animechan.vercel.app/api/quotes/anime?title=naruto"
-    
-    
-    
-    
-    
+
+    var stringOfAnimeFromPickerView = "Hyouka"
+    var quoteByAnimeTitle = "https://animechan.vercel.app/api/quotes/anime?title="
+
     
     override func viewDidLoad()
     {
@@ -49,7 +54,7 @@ class ByAnimeQuoteScreenController: UIViewController, ByAnimeQuoteManagerDelegat
         byAnime.delegate = self
         changeAnime.dataSource = self
         changeAnime.delegate = self
-        byAnime.performRequest(chosenMethod: quoteByAnimeTitle)
+        byAnime.performRequest(chosenMethod: quoteByAnimeTitle+stringOfAnimeFromPickerView)
 
 
     }
@@ -67,7 +72,16 @@ class ByAnimeQuoteScreenController: UIViewController, ByAnimeQuoteManagerDelegat
     
     @IBAction func changeQuoteButton(_ sender: UIButton)
     {
-        byAnime.performRequest(chosenMethod: quoteByAnimeTitle)
+        
+        
+        var newString = stringOfAnimeFromPickerView.replacingOccurrences(of: " ", with: "%20")
+        var newerString = newString.replacingOccurrences(of: "√", with: "%E2%88%9A")
+        print(newString)
+        
+
+        
+        byAnime.performRequest(chosenMethod: quoteByAnimeTitle+newerString)
+        print(quoteByAnimeTitle + newerString)
     }
     
     
@@ -87,15 +101,7 @@ class ByAnimeQuoteScreenController: UIViewController, ByAnimeQuoteManagerDelegat
 
     
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 
@@ -104,8 +110,16 @@ extension ByAnimeQuoteScreenController: UIPickerViewDelegate
 {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?
     {
-        return "Hi"
+        let displayFirstTen = only10.allAnimeFromSite[row]
+        return displayFirstTen
 
+
+    }
+    
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
+    {
+        stringOfAnimeFromPickerView = only10.allAnimeFromSite[row]
     }
 }
 
@@ -122,4 +136,12 @@ extension ByAnimeQuoteScreenController: UIPickerViewDataSource
     }
     
     
+}
+
+
+
+extension String {
+    subscript(i: Int) -> String {
+        return String(self[index(startIndex, offsetBy: i)])
+    }
 }

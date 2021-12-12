@@ -62,7 +62,7 @@ struct AllAnimeManager
         
         do
         {
-            
+            print(AllAnime)
             print("OKKKK")
             let decodedData = try decoder.decode([AllAnimeData].self, from: AllAnime)
             print("The number of anime contained is \(decodedData.count)")

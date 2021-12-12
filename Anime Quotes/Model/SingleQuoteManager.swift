@@ -72,7 +72,7 @@ struct SingleQuoteManager
             let anime = decodedData.anime
             let allTheData = SingleQuoteModel(quote: singleQuote, character: character, anime: anime)
             
-            print(allTheData)
+//            print(allTheData)
             
             
             return allTheData

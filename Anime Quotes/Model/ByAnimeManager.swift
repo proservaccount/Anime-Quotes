@@ -69,7 +69,7 @@ struct ByAnimeManager
         {
             let decodedData = try decoder.decode([SingleQuoteData].self, from: animeData)
             
-            print("HAHAHAHAHA The SIZE: \(decodedData.count)")
+            print("Number of quotes for this anime: \(decodedData.count)")
             delegate?.updatePickerView(numOfSlots: decodedData.count)
             let randomArrayValue = Int.random(in: 0..<decodedData.count)
 
@@ -78,7 +78,7 @@ struct ByAnimeManager
             let anime = decodedData[randomArrayValue].anime
             let allTheData = SingleQuoteModel(quote: singleQuote, character: character, anime: anime)
             
-            print(allTheData)
+//            print(allTheData)
             
             
             return allTheData

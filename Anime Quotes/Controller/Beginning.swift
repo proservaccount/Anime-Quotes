@@ -21,15 +21,12 @@ class Beginning: UIViewController
     
     @IBAction func singleQuotePressed(_ sender: UIButton)
     {
-        print("Button Pressed")
         performSegue(withIdentifier: "getSingleQuote", sender: self)
-
     }
     
     
     @IBAction func quoteByAnimePressed(_ sender: UIButton)
     {
-        print("By anime pressed")
         performSegue(withIdentifier: "getQuoteByTitle", sender: self)
     }
     
@@ -55,3 +52,6 @@ class Beginning: UIViewController
     */
 
 }
+
+
+
